@@ -1,0 +1,8 @@
+*.o
+*.ko
+*.order
+*.symvers
+.hideproc.*
+hideproc.mod.c
+putfile
+.tmp_versions/

